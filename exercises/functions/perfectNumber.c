@@ -15,7 +15,39 @@
 
  #include <stdio.h>
 
+ int isPerfectNumber(int num) {
+
+   int soma = 0;
+
+   for(int divisor = 1; divisor <= num/2; divisor++) {
+
+      if(num % divisor == 0){
+         soma += divisor;
+      }
+   }
+   return soma == num;
+ }
+
+ void displayPerfectNumbers(int limit){
+
+   printf("Os números perfeitos até %d são:\n", limit);
+
+   for(int num = 1; num <= limit; num++){
+      if(isPerfectNumber(num)){
+         printf("%d\n", num);
+      }
+   }
+
+   }
+
  int main() {
+
+   int limit;
+
+   printf("Enter a number to be the limit: ");
+   scanf("%d", &limit);
+
+   displayPerfectNumbers(limit);
 
     return 0;
  }
