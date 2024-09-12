@@ -6,14 +6,17 @@ int primo(int x);
 
 int main() {
 
-    int par, i, retorno1, retorno2;
+    int par, i;
     scanf("%d", &par);
 
+    if(par%2 != 0){
+        printf("O número deve ser par\n");
+        return 0;
+    }
+
     for(i = 1; i <= par; i++){
-        retorno1 = primo(i);
-        retorno2 = primo(par-i);
-        if(retorno1 == 1 && retorno2 == 1){
-            printf("%d e %d\n", i, par - i);
+        if(primo(i) == 1 && primo(par - i) == 1){
+            printf("%d + %d = %d\n", i, par - i, par);
         }
 
     }
@@ -22,6 +25,10 @@ int main() {
 }
 
 int primo(int x){
+    
+    if(x < 2)
+        return 0;
+
     for(int divisor = 2; divisor < x; divisor++){
         if(x%divisor == 0){
             return 0;
