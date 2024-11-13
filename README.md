@@ -3,3 +3,6 @@
 
 ## BEECROWD
     Práticas realizadas no beecrowd
+
+## EXERCISES
+    Exercícios aleatórios acerca dos conteúdos trabalhados em sala de aula
